@@ -7,11 +7,19 @@ import { Poll } from './models/poll.model';
   templateUrl: './polls.component.html',
   styleUrls: [ './polls.component.css' ]
 } )
-export class PollsComponent {
+export class PollsComponent implements OnInit {
+  polls: Array<Poll> = [];
 
-  constructor() { }
+  constructor( private _pollsService: PollsService ) { }
 
   ngOnInit() {
+    this._pollsService.getPolls().subscribe(
+      ( data ) => {
+        this.polls = data;
+      },
+      error => {
+        console.log( error );
+      } );
   }
 
 }

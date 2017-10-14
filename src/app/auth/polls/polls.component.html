@@ -2,6 +2,10 @@
 <div class="panel panel-primary">
   <div class="panel-heading">Encuestas disponibles</div>
   <div class="panel-body">
-    Datos de encuestas irán aquí... (WIP)
+    <div class="b-poll" *ngFor="let poll of polls">
+      <div class="b-question">
+        <a routerLink="/encuestas/detalle/{{poll.id}}">{{ poll.question.label }}</a>
+      </div>
+    </div>
   </div>
 </div>

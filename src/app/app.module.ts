@@ -22,6 +22,10 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routing';
 import { PollsHomeComponent } from './public/polls-home/polls-home.component';
 import { PollsService } from './auth/polls/services/polls.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatRadioModule} from '@angular/material';
+
+
 
 @NgModule( {
   declarations: [
@@ -39,6 +43,8 @@ import { PollsService } from './auth/polls/services/polls.service';
     BrowserModule,
     HttpModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatRadioModule,
     RouterModule.forRoot( routes ),
     Ng2Webstorage
   ],

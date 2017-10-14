@@ -22,5 +22,10 @@ export class PollsService extends HttpService {
     return this.get( url, token );
   }
 
+  getPollById( id: number ): Observable<Poll> {
+    const url = `${AppConfig.API_SERVER_URL}/polls/${id}`;
+    const token = 'NotAvailable';
+    return this.get( url, token );
+  }
 
 }
